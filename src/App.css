@@ -1,38 +1,66 @@
-.App {
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.watches {
+  width: 200px;
+  position: relative;
+}
+
+.city {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.circle {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hand {
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  transform: rotate(180deg);
+  transform-origin: center top;
 }
 
-.App-link {
-  color: #61dafb;
+.hour {
+  width: 4px;
+  height: 30%;
+  left: calc(50% - 2px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.minute {
+  width: 2px;
+  height: 40%;
+  left: calc(50% - 1px);
+}
+
+.second {
+  width: 1px;
+  height: 50%;
+  left: 50%;
 }
