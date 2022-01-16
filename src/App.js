@@ -1,20 +1,27 @@
-import { nanoid } from 'nanoid';
+import React, { useState } from 'react';
 import './App.css';
-import CityModel from './models/CityModel';
 import Watches from './components/Watches';
 import AddCityForm from './components/AddCityForm';
 
 function App() {
-  const watches = new CityModel(nanoid(), 'Moscow', 3);
+  const [cities, setCities] = useState([]);
 
   const handleAdd = (city) => {
-    console.log(city);
+    setCities((prevCities) => [...prevCities, city]);
+  };
+
+  const handleRemove = (id) => {
+    setCities((prevCities) => prevCities.filter((city) => city.id !== id));
   };
 
   return (
-    <div className="container">
+    <div className="app-container">
       <AddCityForm onAdd={handleAdd} />
-      <Watches watches={watches} onRemove={(id) => console.log(id)} />
+      <div className="watches-list">
+        {cities.map((city) => (
+          <Watches key={city.id} watches={city} onRemove={handleRemove} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -8,6 +8,17 @@ html {
   box-sizing: inherit;
 }
 
+.app-container {
+  padding: 20px;
+}
+
+.watches-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
 .watches {
   width: 200px;
   position: relative;
