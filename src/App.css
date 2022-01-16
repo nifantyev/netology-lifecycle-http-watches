@@ -64,3 +64,19 @@ html {
   height: 50%;
   left: 50%;
 }
+
+.form {
+  display: flex;
+  gap: 10px;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.form__label {
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
