@@ -17,6 +17,10 @@ const AddCityForm = ({ onAdd }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onAdd(new CityModel(nanoid(), form.name, parseInt(form.offset)));
+    setForm({
+      name: '',
+      offset: 0,
+    });
   };
 
   return (
