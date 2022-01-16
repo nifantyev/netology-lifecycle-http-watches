@@ -9,7 +9,7 @@ class Watches extends React.Component {
 
   tick = () => {
     const {
-      watches: { offset },
+      city: { offset },
     } = this.props;
     let now = new Date();
     let currentOffset = now.getTimezoneOffset() / 60;
@@ -35,7 +35,7 @@ class Watches extends React.Component {
   handleCloseClick = (event) => {
     event.preventDefault();
     const {
-      watches: { id },
+      city: { id },
       onRemove,
     } = this.props;
     onRemove(id);
@@ -43,7 +43,7 @@ class Watches extends React.Component {
 
   render() {
     const {
-      watches: { city },
+      city: { city },
     } = this.props;
     let hoursAngle = 0,
       minutesAngle = 0,
@@ -83,7 +83,7 @@ class Watches extends React.Component {
 }
 
 Watches.propTypes = {
-  watches: PropTypes.instanceOf(CityModel).isRequired,
+  city: PropTypes.instanceOf(CityModel).isRequired,
   onRemove: PropTypes.func.isRequired,
 };
 

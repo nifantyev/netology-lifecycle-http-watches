@@ -19,7 +19,7 @@ function App() {
       <AddCityForm onAdd={handleAdd} />
       <div className="watches-list">
         {cities.map((city) => (
-          <Watches key={city.id} watches={city} onRemove={handleRemove} />
+          <Watches key={city.id} city={city} onRemove={handleRemove} />
         ))}
       </div>
     </div>
